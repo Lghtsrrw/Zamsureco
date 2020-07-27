@@ -11,8 +11,12 @@
 
         if ( x.options[x.selectedIndex].text == "User") {
           userField.style.display = "block";
-        } else {
-          userField.style.display = "none";
+          guestField.style.display = "none";
+        } else if(x.options[x.selectedIndex].text == "Guest"){
+          guestField.style.display = "block";
+          userField.style.display ="none";
+        }else {
+          
         }
       }
     </script>
@@ -23,12 +27,12 @@
 
       <label for="IDType">Select ID Type: </label>
       <select name="userType" id="userType" onclick="myFunction();">
-        <option value="Guest">Guest</option>
         <option value="User">User</option>
+        <option value="Guest">Guest</option>
       </select><br><br>
 
       <fieldset>
-        <div class="loginData" id="userField ">
+        <div class="" id="userField">
           <label for="username">Username:</label><br>
           <input type="text" id="username" name="username" required><br>
 
@@ -40,24 +44,39 @@
 
           <label for="confirmpassword">Confirm Password:</label><br>
           <input type="password" id="confirmPass" name="confirmPass" required> <br><br>
+
+          <fieldset style="width:80%;">
+            <legend>User's Information</legend>
+
+            <label for="fullname">Fullname</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+            <input type="text" id="mname" name="mname" placeholder="Enter Middle Name" required>
+            <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required><br>
+
+            <label for="Address">Address</label><br>
+            <input type="text" id="address" name="address" placeholder="Your Billing Address" required><br>
+
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email" placeholder="Enter Email Address" required><br>
+
+            <label for="contact">Contact</label><br>
+            <input type="text" id="contact" name="contact" placeholder="Your Contact Number" required><br>
+
+          </fieldset><br>
         </div>
-        <fieldset style="width:50%;" id="userField">
-          <legend>User's Information</legend>
+        <div class="" id = "guestField" style="display:none;">
+          <label for="username">Guest Name</label><br>
+          <input type="text" id="guestname" name="guestname" required><br>
 
-          <label for="fullname">Fullname</label><br>
-          <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
-          <input type="text" id="mname" name="mname" placeholder="Enter Middle Name" required>
-          <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required><br>
+          <label for="gEmail">Email</label><br>
+          <input type="text" id="gEmail" name="gEmail" required><br><br>
 
-          <label for="Address">Address</label><br>
-          <input type="text" id="address" name="address" placeholder="Your Billing Address" required><br>
+          <label for="gContact">Contact Number</label><br>
+          <input type="text" id="gContact" name="gContact" required><br>
 
-          <label for="email">Email</label><br>
-          <input type="text" id="email" name="email" placeholder="Enter Email Address" required><br>
-
-          <label for="contact">Contact</label><br>
-          <input type="text" id="contact" name="contact" placeholder="Your Contact Number" required><br>
-        </fieldset><br>
+          <label for="gAddress">Address:</label><br>
+          <input type="gAddress" id="gAddress" name="gAddress" required> <br><br>
+        </div>
       </fieldset><br>
 
       <input type="submit" value="Login" name="btnRegister">
